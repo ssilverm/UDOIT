@@ -4,7 +4,7 @@ services:
     name: udoit
     runtime: image
     image:
-      url: ghcr.io/ucfopen/udoit:main
+      url: ghcr.io/ucfopen/udoit:stable-3.3.x
     plan: free
 
 
