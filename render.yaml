@@ -1,4 +1,9 @@
-runtime: image
+services:
+  # A Docker web service
+  - type: web
+    name: udoit
+    runtime: image
+    image:
+      url: ghcr.io/ucfopen/udoit:main
 
-image:
-  url: ghcr.io/ucfopen/udoit:main
+
