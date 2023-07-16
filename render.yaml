@@ -5,5 +5,6 @@ services:
     runtime: image
     image:
       url: ghcr.io/ucfopen/udoit:main
+    plan: free
 
 
