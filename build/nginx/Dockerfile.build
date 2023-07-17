@@ -6,6 +6,11 @@ RUN apt-get update -y \
 # PHP_CPPFLAGS are used by the docker-php-ext-* scripts
 ENV PHP_CPPFLAGS="$PHP_CPPFLAGS -std=c++11"
 
+# Install Postgre PDO
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
+
 RUN docker-php-ext-install pdo_mysql gd pdo \
     && docker-php-ext-install opcache \
     && apt-get install libicu-dev -y \
