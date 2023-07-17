@@ -8,3 +8,8 @@ services:
     plan: free
 
 
+databases:
+  - name: udoit database
+    databaseName: udoitDB
+    ipAllowList: [] # only allow internal connections
+    plan: free
