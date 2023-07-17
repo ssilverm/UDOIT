@@ -7,6 +7,25 @@ services:
       url: ghcr.io/ssilverm/udoit:main
     plan: free
     envVars:
+      - key: APP_ENV=prod
+      - key: APP_SECRET=CHANGEME
+      - key: APP_LMS=canvas
+      - key: APP_OAUTH_REDIRECT_PATH="/authorize/check"
+      - key: APP_LTI_REDIRECT_PATH="/lti/authorize/check"
+      - key: APP_LTI_NAME="UDOIT 3"
+      - key: ADMIN_LTI_NAME="UDOIT 3 Admin"
+      - key: USE_DEVELOPMENT_AUTH="no"
+      - key: VERSION_NUMBER="3.3.1"
+      - key: MESSENGER_TRANSPORT_DSN=doctrine://default
+      - key: PHPALLY_EXCLUDED_RULES="
+      - key: BASE_URL="http://127.0.0.1:8000/udoit3"
+      - key: WEBPACK_PUBLIC_PATH="/udoit3/build"
+      - key: STORE_USER_NAMES=true
+      - key: BACKGROUND_COLOR="#ffffff"
+      - key: TEXT_COLOR="#2D3B45"
+      - key: VIMEO_API_KEY=""
+      - key: YOUTUBE_API_KEY=""
+      - key: JWK_BASE_URL="https://canvas.instructure.com/"
       - key: DATABASE_URL
         fromDatabase:
           name: udoit database
@@ -16,5 +35,3 @@ databases:
   - name: udoit database
     ipAllowList: [] # only allow internal connections
     plan: free
-
-
