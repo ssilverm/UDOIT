@@ -30,10 +30,7 @@ services:
       - key: PHPALLY_EXCLUDED_RULES
         value: ""
       - key: BASE_URL
-        fromService:
-          name: udoit
-          type: web
-          property: host
+        sync: false
       - key: WEBPACK_PUBLIC_PATH
         value: "/udoit3/build"
       - key: STORE_USER_NAMES
