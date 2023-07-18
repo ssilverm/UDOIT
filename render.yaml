@@ -32,6 +32,7 @@ services:
       - key: BASE_URL
         fromService:
           name: udoit
+          type: web
           property: host
       - key: WEBPACK_PUBLIC_PATH
         value: "/udoit3/build"
